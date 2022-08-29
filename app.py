@@ -1,5 +1,10 @@
+# PDF_CONVERTER
+#
+# Desenvolvido por César Calafrioli
+#
 import streamlit as st
 
+# Ler o arquivo pdf
 def load_doc():
     document = st.file_uploader("", type=["pdf"])
     if document is not None:
