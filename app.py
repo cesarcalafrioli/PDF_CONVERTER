@@ -8,6 +8,7 @@ from PyPDF2 import PdfFileReader
 # Converter o arquivo pdf em formato txt
 def conv_doc(file):
     
+    # Lendo o arquivo pdf
     pdfFile = open(file, "rb")
 
     # Criando o objeto do arquivo pdf
@@ -17,10 +18,10 @@ def conv_doc(file):
     count = pdfReader.numPages
 
     # Convertendo o arquivo PDF para o formato TXT
-    for i in range(0+1, count):
+    for i in range(0, count):
         pageObj = pdfReader.getPage(i)
         text = pageObj.extractText()
-        textFile = open(r"./teste.txt","a",encoding="utf-16")
+        textFile = open(r"./"+file.replace(".pdf",".txt"),"a",encoding="utf-16")
         textFile.writelines(text)
 
         # Exibindo o progresso da conversão
@@ -45,8 +46,12 @@ def load_doc():
         
         # Converte o arquivo para TXT após o usuário clicar no botão
         if btnConv:
+
+            # Armazenando no diretório o arquivo a ser convertido
             with open(document.name,"wb") as f:
                 f.write(document.getbuffer())
+
+            # Convertendo para o formato txt
             conv_doc(document.name)
 
 def main():
