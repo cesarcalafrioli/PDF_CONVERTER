@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/github/forks/cesarcalafrioli/PDF_CONVERTER)](https://shields.io/)
 [![License](https://img.shields.io/github/stars/cesarcalafrioli/PDF_CONVERTER)](https://shields.io/)
 
-Em desenvolvimento
+Em desenvolvimento.
 
 ## Índice 
 
