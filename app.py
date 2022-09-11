@@ -29,7 +29,7 @@ def conv_doc(file):
         
     pdfFile.close()
 
-    st.write(count)
+    st.write("Arquivo convertido com sucesso!")
 
 
 # Ler o arquivo pdf
@@ -53,6 +53,9 @@ def load_doc():
 
             # Convertendo para o formato txt
             conv_doc(document.name)
+
+        #
+
 
 def main():
     st.title('PDF CONVERTER')
