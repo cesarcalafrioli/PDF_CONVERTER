@@ -31,6 +31,11 @@ def conv_doc(file):
 
     st.write("Arquivo convertido com sucesso!")
 
+    # Criando o botão de download
+    with open(r"./"+file.replace(".pdf",".txt"), "a" ,encoding="utf-16", errors='ignore') as f:
+        st.download_button(f'Download {file.replace(".pdf",".txt")}', f, file_name=file.replace(".pdf",".txt"))
+
+
 
 # Ler o arquivo pdf
 def load_doc():
@@ -53,8 +58,6 @@ def load_doc():
 
             # Convertendo para o formato txt
             conv_doc(document.name)
-
-        #
 
 
 def main():
