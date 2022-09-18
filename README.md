@@ -24,9 +24,11 @@ Em desenvolvimento.
 
 ## Descrição do Projeto
 
+PDF Converter é um aplicativo web criado para facilitar a conversão de um arquivo PDF para o formato TXT.
 
 ## Status do projeto
 
+Atualmente o conversor está em desenvolvimento no produto minimamente viável número 1. Após a conclusão desse, irei avançar para o mvp de número dois, que conterá mais funcionalidades e opções de conversão.
 
 ## Funcionalidades e Demonstração da Aplicação
 
@@ -34,10 +36,14 @@ Em desenvolvimento.
 
 ## Tecnologias utilizadas
 
+
+
 ## Pessoas Contribuidoras
 
 ## Pessoas Desenvolvedoras do Projeto
 
 ## Licença
+
+Licença MIT - César Calafrioli
 
 ## Conclusão
