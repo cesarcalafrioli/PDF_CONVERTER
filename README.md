@@ -20,7 +20,6 @@ Em desenvolvimento.
 * [Pessoas Contribuidoras](#pessoas-contribuidoras)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras-do-projeto)
 * [Licença](#licença)
-* [Conclusão](#conclusão)
 
 ## Descrição do Projeto
 
@@ -46,4 +45,3 @@ Atualmente o conversor está em desenvolvimento no produto minimamente viável n
 
 Licença MIT - César Calafrioli
 
-## Conclusão
