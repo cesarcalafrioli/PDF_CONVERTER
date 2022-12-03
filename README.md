@@ -1,7 +1,5 @@
 ## CONVERSOR DE PDF
 
-EM DESENVOLVIMENTO
-
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 [![License](https://img.shields.io/github/license/cesarcalafrioli/PDF_CONVERTER)](https://shields.io/)
@@ -32,21 +30,22 @@ Em desenvolvimento.
 
 1. Instale as ferramentas de linha de comando xpdf conforme o seu sistema operacional.
 
- **Instalando no linux**
+    **Instalando no linux**
 
-```
-wget --no-check-certificate https://dl.xpdfreader.com/xpdf-tools-linux-4.04.tar.gz
-tar -xvf xpdf-tools-linux-4.04.tar.gz && sudo cp xpdf-tools-linux-4.04/bin64/pdftotext /usr/local/bin
-```
+    ```
+    wget --no-check-certificate https://dl.xpdfreader.com/xpdf-tools-linux-4.04.tar.gz
+    tar -xvf xpdf-tools-linux-4.04.tar.gz && sudo cp xpdf-tools-linux-4.04/bin64/pdftotext /usr/local/bin
+    ```
 
-**Instalando no windows**
+    **Instalando no windows**
 
-1 - Execute os comandos abaixo no powershell
-```
-Invoke-WebRequest https://dl.xpdfreader.com/xpdf-tools-win-4.04.zip -OutFile C:\Users\$USERNAME\Downloads\xpdf-tools-win-4.04.zip
-Expand-Archive -Path C:\Users\%username%\Downloads\xpdf-tools-win-4.04.zip -DestinationPath C:\
-```
-2 - Em Painel de controle > Sistemas > Configurações avançadas do sistemas > Variáveis de ambiente, adicione na variável Path o diretório ```C:\xpdf-tools-win-4.04\bin64```, e clique em Ok.
+    1 - Execute os comandos abaixo no powershell
+    ```
+    Invoke-WebRequest https://dl.xpdfreader.com/xpdf-tools-win-4.04.zip -OutFile $env:userprofile\Downloads\xpdf-tools-win-4.04.zip
+    Expand-Archive -Path $env:userprofile\Downloads\xpdf-tools-win-4.04.zip -DestinationPath C:\
+    ```
+
+    2 - Em Painel de controle > Sistemas > Configurações avançadas do sistemas > Variáveis de ambiente, adicione na variável Path o diretório ```C:\xpdf-tools-win-4.04             \bin64```, e clique em Ok.
 
 
 2. É necessário rodar esse aplicativo em um ambiente virtual python. Veja este [tutorial](https://github.com/cesarcalafrioli/tutorial-ambiente-virtual-python) para saber como.
@@ -56,11 +55,11 @@ pip install -r requirements.txt
 ```
 4. Rode o streamlit
 ```
-streamlit run boletins_servico.py
+streamlit run app.py
 ```
 
 O script irá abrir a ferramenta no navegador web.
-.
+
 
 ## Funcionalidades e Demonstração da Aplicação
 
