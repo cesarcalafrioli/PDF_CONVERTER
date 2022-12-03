@@ -4,27 +4,33 @@ import subprocess
 import os
 import shutil
 
-#  install the new version
-# !wget --no-check-certificate https://dl.xpdfreader.com/xpdf-tools-linux-4.04.tar.gz
-# !tar -xvf xpdf-tools-linux-4.04.tar.gz && sudo cp xpdf-tools-linux-4.04/bin64/pdftotext /usr/local/bin
+# Diretórios onde ficarão armazenados os arquivos PDF e TXT conforme seu sistema operacional
+if platform.system() == "Linux":
+    PDF_FOLDER = "files//pdf"
+    TXT_FOLDER = "files//txt"
+elif platform.system() == "Windows":
+    PDF_FOLDER = "files\\pdf"
+    TXT_FOLDER = "files\\txt"
+else:
+    print("Sistema operacional não reconhecido")
+    exit()
 
-# Diretórios onde ficarão armazenados os arquivos PDF e TXT
-PDF_FOLDER = "files\\pdf"
-TXT_FOLDER = "files\\txt"
 
 # Converte o arquivo pdf para o formato txt.
 # Detecta em qual sistema operacional o script está rodando
 def conv_file(path, filename, sist_op):
 
-    # Onde vai ficar o arquivo txt
-    target_text_filename = filename.replace(".pdf",".txt")
-    target_text_path = os.path.join(TXT_FOLDER, target_text_filename)
+    # Informa onde vai ficar o arquivo txt
+    dir_arq_conv = os.path.join(TXT_FOLDER, filename.replace(".pdf",".txt"))
 
     # Executa a ferramenta xpdf conforme o sistema operacional
+    # pdftotext <arquivo pdf> <diretorio e o nome do arquivo a ser convertido>
     if sist_op == 'Linux':
-        subprocess.run(['pdftotext', path+"\\"+filename, target_text_path ], capture_output = True)
+        if subprocess.run(['pdftotext', path+"//"+filename, dir_arq_conv ], capture_output = True):
+            os.remove(path+"//"+filename)
     elif sist_op == 'Windows':
-        subprocess.run(['pdftotext', path+"\\"+filename, target_text_path ], capture_output = True)
+        if subprocess.run(['pdftotext', path+"\\"+filename, dir_arq_conv ], capture_output = True):
+            os.remove(path+"\\"+filename)
     else:
         print("Sistema operacional não reconhecido")
         exit()
@@ -35,10 +41,6 @@ def conv_file(path, filename, sist_op):
     #with open(r""+filename.replace(".pdf",".txt"), "a" ,encoding="utf-16", errors='ignore') as f:
     #    st.download_button(f'Download {filename.replace(".pdf",".txt")}', f, file_name=filename.replace(".pdf",".txt"))
 
-#filename = "files\\pdf\\BO_203-2022.pdf"
-#target_text_filename = "BO_203-2022.txt"
-#target_text_path = os.path.join("files\\txt",target_text_filename)
-#subprocess.run(['tools\win64\pdftotext.exe', filename, target_text_path ], capture_output = True)
 
 # Ler o arquivo pdf
 def load_file():
@@ -59,11 +61,9 @@ def load_file():
                 f.write(document.getbuffer())
 
             # movendo o arquivo para a pasta files/pdf
-            #shutil.move(document.name, "files\\pdf")
             shutil.move(document.name, PDF_FOLDER)
 
             # Convertendo para o formato txt
-            # conv_file("files\\pdf\\"+document.name, platform.system())
             conv_file(PDF_FOLDER, document.name, platform.system())
 
 def main():
