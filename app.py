@@ -4,6 +4,11 @@ import subprocess
 import os
 import shutil
 
+# Cria os diretórios onde ficarão os arquivos caso ainda não existam
+if not os.path.exists('files'):
+    os.makedirs('files/pdf')
+    os.makedirs('files/txt') 
+
 # Diretórios onde ficarão armazenados os arquivos PDF e TXT conforme seu sistema operacional
 if platform.system() == "Linux":
     PDF_FOLDER = "files//pdf"
