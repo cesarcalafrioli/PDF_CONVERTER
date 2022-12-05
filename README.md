@@ -2,6 +2,7 @@
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
+[![License](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)](https://shields.io/)
 [![License](https://img.shields.io/github/license/cesarcalafrioli/PDF_CONVERTER)](https://shields.io/)
 [![License](https://img.shields.io/github/issues/cesarcalafrioli/PDF_CONVERTER)](https://shields.io/)
 [![License](https://img.shields.io/github/forks/cesarcalafrioli/PDF_CONVERTER)](https://shields.io/)
@@ -10,9 +11,8 @@
 ## Índice 
 
 * [Descrição do Projeto](#descrição-do-projeto)
-* [Status do Projeto](#status-do-projeto)
+* [Como funciona](#como-funciona)
 * [Instruções](#instrucoes)
-* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Licença](#licença)
 
@@ -22,9 +22,9 @@ PDF Converter é um aplicativo web criado para facilitar a conversão de um arqu
 
 Mais informações sobre o xpdf acesse o site http://www.xpdfreader.com
 
-## Status do projeto
+## Como funciona
 
-Em desenvolvimento.
+O aplicativo recebe o arquivo PDF enviado pelo usuário. Após este clicar no botão de converter,o arquivo enviado é colocado temporariamente em uma subpasta chamada pdf localizada na pasta files e, em seguida, realiza a sua conversão para o formato txt. O arquivo convertido é colocado na subpasta txt, que também fica na pasta files, enquanto o arquivo PDF é apagado.
 
 ## Instruções
 
@@ -59,10 +59,6 @@ streamlit run app.py
 ```
 
 O script irá abrir a ferramenta no navegador web.
-
-
-## Funcionalidades e Demonstração da Aplicação
-
 
 
 ## Tecnologias utilizadas
