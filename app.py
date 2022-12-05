@@ -43,9 +43,8 @@ def conv_file(path, filename, sist_op):
     st.write("Arquivo convertido com sucesso!")
 
     # Criando o botão de download
-    #with open(r""+filename.replace(".pdf",".txt"), "a" ,encoding="utf-16", errors='ignore') as f:
-    #    st.download_button(f'Download {filename.replace(".pdf",".txt")}', f, file_name=filename.replace(".pdf",".txt"))
-
+    with open(r""+dir_arq_conv , encoding="utf-8" , errors='ignore') as f:
+        st.download_button(f'Baixar o arquivo', f, filename.replace(".pdf",".txt"))
 
 # Ler o arquivo pdf
 def load_file():
